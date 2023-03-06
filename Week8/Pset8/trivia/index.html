@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function colorGreen(){
+                document.getElementById("btnB").style.backgroundColor='green';
+                document.getElementById("btnC").style.backgroundColor='#d9edff';
+                document.getElementById("btnA").style.backgroundColor='#d9edff';
+                document.getElementById("btnD").style.backgroundColor='#d9edff';
+                var answerInc = document.getElementById("answer_incorrect");
+                var answerC = document.getElementById("answer_correct");
+                if (answerC.style.display == "none") {
+                answerC.style.display = "block";
+                answerInc.style.display = "none";
+                }
+            }
+            function AcolorRed(){
+                document.getElementById("btnA").style.backgroundColor='red';
+                document.getElementById("btnC").style.backgroundColor='#d9edff';
+                document.getElementById("btnD").style.backgroundColor='#d9edff';
+                document.getElementById("btnB").style.backgroundColor='#d9edff';
+                var answerInc = document.getElementById("answer_incorrect");
+                var answerC = document.getElementById("answer_correct");
+                if (answerInc.style.display == "none") {
+                answerInc.style.display = "block";
+                answerC.style.display = "none";
+                }
+            }
+            function CcolorRed(){
+                document.getElementById("btnC").style.backgroundColor='red';
+                document.getElementById("btnA").style.backgroundColor='#d9edff';
+                document.getElementById("btnD").style.backgroundColor='#d9edff';
+                document.getElementById("btnB").style.backgroundColor='#d9edff';
+                var answerInc = document.getElementById("answer_incorrect");
+                var answerC = document.getElementById("answer_correct");
+                if (answerInc.style.display == "none") {
+                answerInc.style.display = "block";
+                answerC.style.display = "none";
+                }
+            }
+            function DcolorRed(){
+                document.getElementById("btnC").style.backgroundColor='#d9edff';
+                document.getElementById("btnD").style.backgroundColor='red';
+                document.getElementById("btnA").style.backgroundColor='#d9edff';
+                document.getElementById("btnB").style.backgroundColor='#d9edff';
+                var answerInc = document.getElementById("answer_incorrect");
+                var answerC = document.getElementById("answer_correct");
+                if (answerInc.style.display == "none") {
+                answerInc.style.display = "block";
+                answerC.style.display = "none";
+                }
+            }
+            function CheckAnswer(){
+                var answer = document.getElementById("answer");
+                var answerInc2 = document.getElementById("answer_incorrect2");
+                var answerC2 = document.getElementById("answer_correct2");
+                if(answer.value == 4) {
+                    answer.style.backgroundColor='green';
+                    answerC2.style.display = "block";
+                    answerInc2.style.display = "none";
+                }
+                else {
+                    answer.style.backgroundColor='red';
+                    answerC2.style.display = "none";
+                    answerInc2.style.display = "block";
+                }
+
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here pewnie jeszcze jakaś funkcja onclick przy każdym z tych przycisków-->
+                <h3>Choose answer B</h3>
+                <div id = "button">
+                    <button id = 'btnA' onclick = "AcolorRed();" type="button">A</button>
+                    <button id = 'btnB' onclick = "colorGreen();"type="button">B</button>
+                    <button id = 'btnC' onclick = "CcolorRed();"type="button">C</button>
+                    <button id = 'btnD' onclick = "DcolorRed();"type="button">D</button>
+
+                </div>
+                <p id='answer_correct' style='display: none'>Correct!</p>
+                <p id='answer_incorrect' style='display: none'>Incorrect</p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>How much is 2 + 2?</h3>
+                <!-- <form> -->
+                <input autocomplete="off" id = "answer">
+                <button onclick = "CheckAnswer();" type="submit">Check Answer</button>
+                <p id='answer_correct2' style='display: none'>Correct!</p>
+                <p id='answer_incorrect2' style='display: none'>Incorrect</p>
+                <!-- </form> -->
+            </div>
+        </div>
+    </body>
+</html>
