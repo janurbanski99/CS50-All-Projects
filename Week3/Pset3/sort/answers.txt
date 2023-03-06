@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: fastet handled the sorted numbers, slowest with the 2 remaining
+
+sort2 uses: merge sort
+
+How do you know?: in general the fastest algorithm
+
+sort3 uses: selection sort
+
+How do you know?: handled every case in similar time, slower than merge for sure and the slowest one with the sorted numbers
